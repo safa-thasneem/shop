@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+     {{products.description|truncatewords:155}}
+
+{% endblock %}
+{% block title %}
+       {% if category %}
+            {{product.name}} -ABC Shop
+       {% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="row my_prod_row_class">
+     <div class="mx_auto">
+         <p> <a href="{% url 'ecommerceapp:allprocat' %}">Home</a> | <a href="{{products.category.get_url}}">{{products.category}} | </a>{{products.name}}</p>
+     </div>
+</div>
+<div class="container">
+<br>
+<div class="row">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+                <div style="min-width-18rem">
+                      <img src="{{products.image.url}}" alt="{{products.name}}" width="350" height="250">
+                </div>
+       </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div>
+                    <h1 class="my-prod-title">{{products.name}}</h1>
+                    <p>${{products.price}}</p>
+                    <p>product Description</p>
+                    <p class="text-justify my_prod_text">{{products.description}}</p>
+                    {% if products.stock <= 0 %}
+                    <p class="text-justify my_prod_text"><b>Out Of Stock</b></p>
+                    {% else %}
+                    <a class="btn btn-secondary" href="{% url 'cart:add_cart' products.id  %}">Add to Cart</a>
+                    {% endif %}
+                </div>
+         </div>
+    </div>
+</div>
+{% endblock %}

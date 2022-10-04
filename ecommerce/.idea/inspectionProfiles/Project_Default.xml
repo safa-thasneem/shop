@@ -1,0 +1,25 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="sampleapp.views.User" />
+          <option value="sampleapp.views.UserName" />
+          <option value="sampleapp.views.Password" />
+          <option value="sampleapp.views.FirstName" />
+          <option value="sampleapp.views.LastName" />
+          <option value="sampleapp.views.Email" />
+          <option value="sampleapp.views.Password2" />
+          <option value="credentials.views.User" />
+          <option value="credentials.views.UserName" />
+          <option value="credentials.views.Password" />
+          <option value="credentials.views.FirstName" />
+          <option value="credentials.views.LastName" />
+          <option value="credentials.views.Email" />
+          <option value="credentials.views.redirect" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
